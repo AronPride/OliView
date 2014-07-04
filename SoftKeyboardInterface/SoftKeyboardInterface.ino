@@ -47,7 +47,7 @@ String fourStruct;
 String fiveStruct;
 
 double value = 0; // ADC reading value
-float aRef = 3.3; // Analog Reference
+float aRef = 2.048; // Analog Reference
 
 //---------------------------------------------------------------------------------Setup
 
@@ -112,7 +112,7 @@ void loop() {
   //
 
   if (inStruct.startsWith("cycVolt")) {
-    String numStruct = inStruct.substring(7);
+
     const char * CVSTarray = twoStruct.c_str();
     CVstartVolt = atof(CVSTarray);
     const char * CVPVarray = threeStruct.c_str();
@@ -130,7 +130,7 @@ void loop() {
   //      Potential Voltage (1.00 Volts)  PApotVolt   float 
   //
   if (inStruct.startsWith("potAmpero")) {
-    String numStruct = inStruct.substring(9);
+
     const char * PASTarray = twoStruct.c_str();
     PAsampTime = atof(PASTarray);
     const char * PAPVarray = threeStruct.c_str();
@@ -231,7 +231,7 @@ void sample(float sampTime, int waveType, float startVolt, float endVolt, float 
 
       for (int i = 0; i < samples; i++) {
         value = analogRead(readPin);                  // analog read == # out of 2^16
-        Serial.println(value * aRef / 65535.0, 6);    // ratio, value/2^16, is the percent of ADC reference... * aRef (ADC Reference Voltage) == Voltage measured
+        Serial.println(value * aRef / 65535.0-1.022, 6);    // ratio, value/2^16, is the percent of ADC reference... * aRef (ADC Reference Voltage) == Voltage measured
         while (usec < samplingDelay);                 // wait
         usec = usec - samplingDelay;
       }
@@ -266,7 +266,7 @@ void sample(float sampTime, int waveType, float startVolt, float endVolt, float 
     //
     case (2): // triangle wave
     {
-      float val3 = startVolt/aRef*4096.0 + 2048.0;
+      float val3 = (startVolt-1.024)/aRef*4096.0 + 2048.0;
       for (int i = 0; i < round(samples/2); i++) {
 
         analogWrite(A14, (int)val3);
@@ -292,10 +292,6 @@ void sample(float sampTime, int waveType, float startVolt, float endVolt, float 
     analogWrite(A14, 0);
   }
 }
-
-
-
-
 
 
 
