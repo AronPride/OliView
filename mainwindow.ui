@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -204,14 +204,9 @@
           <x>120</x>
           <y>160</y>
           <width>101</width>
-          <height>31</height>
+          <height>35</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>Default</string>
-         </property>
-        </item>
        </widget>
       </widget>
       <widget class="QWidget" name="toolBoxPage2_2">
@@ -220,7 +215,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -360,7 +355,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -453,7 +448,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -476,7 +471,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -486,7 +481,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QCustomPlot" name="customPlot" native="true"/>
+     <widget class="QCustomPlot" name="customPlot" native="true">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -497,7 +496,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSerial_Port">
@@ -643,7 +642,7 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>qcustomplot.h</header>
+   <header>../../qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
