@@ -67,9 +67,9 @@ MainWindow::MainWindow(QWidget *parent) :
     setUpComPort();
 
     setupAldeSensGraph(ui->customPlot);
-    
+
     setupWaveTypes();
-    
+
     connect(ui->sampButtonCV, SIGNAL(clicked()), this, SLOT(sampCVPressed()));
     connect(ui->sampButtonPA, SIGNAL(clicked()), this, SLOT(sampPAPressed()));
     connect(ui->sampButtonAS, SIGNAL(clicked()), this, SLOT(sampASPressed()));
@@ -106,11 +106,11 @@ void MainWindow::setupWaveTypes()
     QIcon squareWave(":/Images/SquareWave.png");
 
     ui->ASwaveType->insertItem(0, squareWave,(const char *) 0);
-    ui->ASwaveType->setIconSize(QSize(100,30));
+    ui->ASwaveType->setIconSize(QSize(100,28));
     ui->ASwaveType->insertItem(1, sineWave,(const char *) 0);
-    ui->ASwaveType->setIconSize(QSize(100,30));
+    ui->ASwaveType->setIconSize(QSize(100,28));
     ui->ASwaveType->insertItem(2, triangleWave,(const char *) 0);
-    ui->ASwaveType->setIconSize(QSize(100,30));
+    ui->ASwaveType->setIconSize(QSize(100,28));
     //ui->ASwaveType->removeItem();
     ui->ASwaveType->setCurrentIndex(0);
 
@@ -359,7 +359,7 @@ qDebug() << waveNum;
     case 3: ASsr = "0" + ASsrBuf; break;
     case 4: ASsr = ASsrBuf; break;
     }
-    
+
     QString mainInstructions = ("anoStrip!"+ASsv+"@"+ASpv+"#"+ASsr+"$"+wave+"%");
     qDebug() << mainInstructions;
     serial.write(mainInstructions.toStdString().c_str());
