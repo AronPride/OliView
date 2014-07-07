@@ -354,7 +354,6 @@ void MainWindow::sampASPressed()
     QString wave = QString::number(waveNum);
 
     QString mainInstructions = ("anoStrip!"+ASsv+"@"+ASpv+"#"+ASsr+"$"+wave+"%");
-    qDebug() << mainInstructions;
     serial.write(mainInstructions.toStdString().c_str());
 
     ui->customPlot->clearGraphs();
@@ -413,8 +412,6 @@ void MainWindow::preParse() {
     QString sampleBuf = serial.readLine();
     samples = sampleBuf.toInt();                                    //Teensy now sends the number of samples in the first line
 
-    qDebug() << samples;
-
     QTimer::singleShot(samples*1000/sampleRate, this, SLOT(parseAndPlot()));  //Should allow us to set up a timer trigger.
 }
 
@@ -464,7 +461,6 @@ void MainWindow::parseAndPlot()
         xValues[i] = x;
         yValues[i] = y;
         x += 1000/double(sampleRate);
-        qDebug() << y;
     }
 
     ui->customPlot->addGraph();
