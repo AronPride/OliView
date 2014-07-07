@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>417</height>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -46,19 +46,6 @@
         </property>
         <property name="text">
          <string>Sample</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="reconButton">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>300</y>
-          <width>107</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Reconnect</string>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="ASstartVolt">
@@ -172,19 +159,6 @@
          <string>Wave Type</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="clrButton">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>260</y>
-          <width>107</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Clear</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
@@ -204,7 +178,7 @@
           <x>120</x>
           <y>160</y>
           <width>101</width>
-          <height>35</height>
+          <height>31</height>
          </rect>
         </property>
        </widget>
@@ -215,7 +189,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>417</height>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -355,7 +329,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>417</height>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -448,7 +422,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>417</height>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -464,6 +438,19 @@
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>31</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page">
        <property name="geometry">
@@ -471,7 +458,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>417</height>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -481,11 +468,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QCustomPlot" name="customPlot" native="true">
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-     </widget>
+     <widget class="QCustomPlot" name="customPlot" native="true"/>
     </item>
    </layout>
   </widget>
@@ -496,7 +479,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSerial_Port">
@@ -642,7 +625,7 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>../../qcustomplot.h</header>
+   <header>qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
