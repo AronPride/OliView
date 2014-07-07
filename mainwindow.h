@@ -50,8 +50,8 @@ public:
 private slots:
     void waveType();
     void fillPortsInfo();
+    void preParse();
     void parseAndPlot();
-    void sampleSetup();
     void mouseWheel();
     void mousePress();
     void removeSelectedGraph();
