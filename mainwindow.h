@@ -23,18 +23,35 @@
 **          Version: 1.2.1                                                **
 ****************************************************************************/
 
+/************************************************************************************************************
+**                                                                                                         **
+**  This is the example code for QCustomPlot.                                                              **
+**                                                                                                         **
+**  It demonstrates basic and some advanced capabilities of the widget. The interesting code is inside     **
+**  the "setup(...)Demo" functions of MainWindow.                                                          **
+**                                                                                                         **
+**  In order to see a demo in action, call the respective "setup(...)Demo" function inside the             **
+**  MainWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
+**  you want (for those, see MainWindow constructor comments). All other functions here are merely a       **
+**  way to easily create screenshots of all demos for the website. I.e. a timer is set to successively     **
+**  setup all the demos and make a screenshot of the window area and save it in the ./screenshots          **
+**  directory.                                                                                             **
+**                                                                                                         **
+*************************************************************************************************************/
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
 #include <QTimer>
-#include "qcustomplot.h" // the header file of QCustomPlot
+#include <selectport.h>
+#include <qcustomplot.h> // the header file of QCustomPlot
+#include <QtSerialPort/QSerialPort>
 
 namespace Ui {
 class MainWindow;
 }
-
+class selectport;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -42,16 +59,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    
-    void setupWaveTypes();
+
     void setupAldeSensGraph(QCustomPlot *customPlot);
     void setUpComPort();
 
+
 private slots:
-    void waveType();
-    void fillPortsInfo();
     void parseAndPlot();
-    void sampleSetup();
     void mouseWheel();
     void mousePress();
     void removeSelectedGraph();
@@ -66,28 +80,21 @@ private slots:
     void closeSelected();
     void disconnectSelected();
     void graphClicked(QCPAbstractPlottable *plottable);
+    void openSerialPicker();
 
     void res10ASelected();
     void res10nASelected();
     void res100nASelected();
     void res1000nASelected();
 
-    void rate2000Selected();
-    void rate5000Selected();
-    void rate10000Selected();
-
 private:
     Ui::MainWindow *ui;
-
-    int samples;
-    int sampleRate;
-
-    //int graphMemory;        // used in parseAndPlot()
-    int sampleNumber;       // used in parseAndPlot()
-    //double xVal;             // used in parseAndPlot()
-    
-    int waveNum;
-
+    QString demoName;
+    QTimer dataTimer;
+    QCPItemTracer *itemDemoPhaseTracer;
+    int currentDemoIndex;
+    selectport *myPort;
+    QSerialPort *serial;
 
 };
 

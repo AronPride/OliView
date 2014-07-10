@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -220,7 +220,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -360,7 +360,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -453,7 +453,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -476,7 +476,7 @@
          <x>0</x>
          <y>0</y>
          <width>250</width>
-         <height>460</height>
+         <height>417</height>
         </rect>
        </property>
        <attribute name="label">
@@ -497,22 +497,17 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSerial_Port">
     <property name="title">
      <string>Serial Port</string>
     </property>
-    <widget class="QMenu" name="menuSelect_Port">
-     <property name="title">
-      <string>Select Port</string>
-     </property>
-    </widget>
-    <addaction name="menuSelect_Port"/>
     <addaction name="separator"/>
     <addaction name="actionReconnect"/>
     <addaction name="actionDisconnect"/>
+    <addaction name="menu_Select_Port"/>
    </widget>
    <widget class="QMenu" name="menuResolution">
     <property name="title">
@@ -637,13 +632,18 @@
     <string>hello</string>
    </property>
   </action>
+  <action name="menu_Select_Port">
+   <property name="text">
+    <string>selectserialport</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>qcustomplot.h</header>
+   <header>../../qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
