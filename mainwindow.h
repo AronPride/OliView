@@ -52,6 +52,7 @@ private slots:
     void fillPortsInfo();
     void preParse();
     void parseAndPlot();
+    void CVparseAndPlot();
     void mouseWheel();
     void mousePress();
     void removeSelectedGraph();
@@ -61,7 +62,7 @@ private slots:
     void sampASPressed();
     void sampPAPressed();
     void sampCVPressed();
-    void resetSelected();
+    void resetAxis();
     void clearAllSelected();
     void closeSelected();
     void disconnectSelected();
@@ -78,13 +79,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
     int samples;
     int sampleRate;
-
-    //int graphMemory;        // used in parseAndPlot()
-    int sampleNumber;       // used in parseAndPlot()
-    //double xVal;             // used in parseAndPlot()
+    float gain;
+    float voltDiv;
+    int graphMemory;
+    int sampleNumber;
     
     int waveNum;
 
