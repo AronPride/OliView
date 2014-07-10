@@ -188,8 +188,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>250</width>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -328,8 +328,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>250</width>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -421,8 +421,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>250</width>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -457,8 +457,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>250</width>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="label">
@@ -468,7 +468,9 @@
      </widget>
     </item>
     <item>
-     <widget class="QCustomPlot" name="customPlot" native="true"/>
+     <widget class="QCustomPlot" name="customPlot" native="true">
+      <zorder>toolBox2</zorder>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -546,22 +548,22 @@
   </action>
   <action name="action_10_A">
    <property name="text">
-    <string>+/- 10 µA</string>
+    <string extracomment="100000">+/- 10 µA</string>
    </property>
   </action>
   <action name="action_1000_nA">
    <property name="text">
-    <string>+/- 1000 nA</string>
+    <string extracomment="1000000">+/- 1000 nA</string>
    </property>
   </action>
   <action name="action_100_nA">
    <property name="text">
-    <string>+/- 100 nA</string>
+    <string extracomment="10000000">+/- 100 nA</string>
    </property>
   </action>
   <action name="action_10_nA">
    <property name="text">
-    <string>+/- 10 nA</string>
+    <string extracomment="100000000">+/- 10 nA</string>
    </property>
   </action>
   <action name="actionClear_All">
@@ -617,6 +619,11 @@
   <action name="actionHello_2">
    <property name="text">
     <string>hello</string>
+   </property>
+  </action>
+  <action name="actionAsdf">
+   <property name="text">
+    <string>asdf</string>
    </property>
   </action>
  </widget>
